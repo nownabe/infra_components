@@ -1,0 +1,6 @@
+- hosts: all
+  roles:
+    - ping
+    - dev
+    - influxdb
+    - grafana
