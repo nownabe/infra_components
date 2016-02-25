@@ -1,0 +1,7 @@
+- yum:
+    name: epel-release
+
+- yum:
+    name: "{{ item }}"
+  with_items:
+    - byobu

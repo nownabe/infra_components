@@ -1,0 +1,26 @@
+- copy:
+    dest: /etc/yum.repos.d/influxdb.repo
+    src: etc/yum.repos.d/influxdb.repo
+
+- yum:
+    name: influxdb
+
+- template:
+    dest: /etc/influxdb/influxdb.conf
+    src: etc/influxdb/influxdb.conf.j2
+  notify:
+    - restart influxdb service
+
+- service:
+    name: influxdb
+    state: started
+  run_once: true
+
+- template:
+    dest: /etc/default/influxdb
+    src: etc/default/influxdb.j2
+
+- service:
+    name: influxdb
+    state: started
+    enabled: true

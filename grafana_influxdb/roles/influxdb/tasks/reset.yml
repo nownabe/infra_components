@@ -1,0 +1,16 @@
+- service:
+    name: influxdb
+    state: stopped
+    enabled: false
+
+- yum:
+    name: influxdb
+    state: absent
+
+- file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /var/lib/influxdb
+    - /etc/default/influxdb
+    - /etc/influxdb

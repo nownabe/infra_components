@@ -1,0 +1,1 @@
+INFLUXD_OPTS="-join {% for hostname in groups['influxdb'] %}{{ hostname }}:8091{% if not loop.last %},{% endif %}{% endfor %}"
