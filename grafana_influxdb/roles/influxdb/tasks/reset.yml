@@ -3,10 +3,6 @@
     state: stopped
     enabled: false
 
-- yum:
-    name: influxdb
-    state: absent
-
 - file:
     path: "{{ item }}"
     state: absent

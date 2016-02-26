@@ -1,0 +1,7 @@
+- yum:
+    name: https://grafanarel.s3.amazonaws.com/builds/grafana-2.6.0-1.x86_64.rpm
+
+- service:
+    name: grafana-server
+    state: started
+    enabled: true
